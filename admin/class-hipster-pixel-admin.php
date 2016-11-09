@@ -96,8 +96,42 @@ class Hipster_Pixel_Admin {
 		 * class.
 		 */
 
+		$screen = get_current_screen();
+		if($screen->base == 'post') {
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/hipster-pixel-modal-shortcode.js', array( 'jquery' ), $this->version, false );
+		}
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/hipster-pixel-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+
+	/**
+	 * Insert shortcode media button
+	 *
+	 *
+	 */
+	public function add_media_button(){
+		global $post;
+
+		?>
+			<a href="#TB_inline?width=600&height=550&inlineId=hipster-pixel-modal" class="thickbox button" id="button-hipster-pixel-shortcode" title="Hipster Pixel Shortcode Builder">Hipster Pixel</a>
+	<?php
+
+//		if(!empty($post)){
+//			echo "<a id=\"bacon-ipsum-shortcodeinsert\" title=\"".__('Bacon Ipsum Shortcode Builder','bacon-ipsum')."\" style=\"padding-left: 0.4em;\" class=\"button bacon-ipsum-editor-button\" href=\"#inst\">\n";
+//			echo "	<img src=\"". self::get_url( __FILE__ ) . "assets/images/icon.png\" alt=\"".__("Generate Bacon","bacon-ipsum")."\" style=\"padding:0 2px 1px;\" /> ".__('Bacon Ipsum', 'bacon-ipsum')."\n";
+//			echo "</a>\n";
+//		}
+	}
+
+	public function add_modal_template() {
+
+		$screen = get_current_screen();
+		if($screen->base != 'post') {
+			return;
+		}
+		//add_thickbox();
+		include_once 'partials/hipster-pixel-modal-shortcode.php';
+	}
+
 
 }
