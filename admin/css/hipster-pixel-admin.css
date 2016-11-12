@@ -1,4 +1,27 @@
-/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
- */
+#form-container-textgen, #form-container-imagegen {
+    max-width: 380px;
+}
+textarea.results-box {
+    border: 0;
+    width: 100%
+}
+.align-none {
+    margin: 10px auto;
+}
+.align-left {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.align-right {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+.block {
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 900px !important;
+    }
+}
