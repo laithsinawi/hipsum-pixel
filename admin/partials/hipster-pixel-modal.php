@@ -10,8 +10,6 @@
 <!--			</table>-->
 <!--		</form>-->
 <!--	</div>-->
-
-	<h2>Hipster Pixel</h2>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6">

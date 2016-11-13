@@ -76,9 +76,10 @@ class Hipster_Pixel_Admin {
 		$screen = get_current_screen();
 		if($screen->base == 'post') {
 			wp_enqueue_script( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.js', array( 'jquery' ), $this->version, true );
-			wp_enqueue_script( $this->plugin_name . '-admin-js', plugin_dir_url( __FILE__ ) . 'js/hipster-pixel-admin.js', array(), $this->version, true );
-			wp_enqueue_style( $this->plugin_name . '-bootstrap-css', plugin_dir_url( __DIR__ ) . 'lib/bootstrap/bootstrap.min.css', array(), $this->version, 'all' );
-			wp_enqueue_style( $this->plugin_name . '-admin-css', plugin_dir_url( __FILE__ ) . 'css/hipster-pixel-admin.css', array(), $this->version, 'all' );
+			wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipster-pixel-admin.js', array(), $this->version, true );
+			wp_enqueue_style( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __DIR__ ) . 'lib/bootstrap/bootstrap.min.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hipster-pixel-admin.css', array(), $this->version, 'all' );
 
 		}
 
@@ -95,7 +96,7 @@ class Hipster_Pixel_Admin {
 		global $post;
 
 		?>
-			<a href="#TB_inline?width=1000&height=600&inlineId=hipster-pixel-modal" class="thickbox button" id="button-hipster-pixel-shortcode" title="Hipster Pixel HTML Builder">Hipster Pixel</a>
+			<a href="#TB_inline?width=100&height=600&inlineId=hipster-pixel-modal" class="thickbox button" id="button-hipster-pixel-shortcode" title="Hipster Pixel HTML Builder">Hipster Pixel</a>
 	<?php
 
 	}
