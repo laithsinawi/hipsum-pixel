@@ -144,7 +144,8 @@ class Hipster_Pixel {
 
 		$plugin_admin = new Hipster_Pixel_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
+		$this->loader->add_action( 'wp_print_scripts', $plugin_admin, 'wpdocs_dequeue_script' );
+		$this->loader->add_action( 'wp_print_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'media_buttons', $plugin_admin, 'add_media_button' );
 		$this->loader->add_action( 'admin_footer', $plugin_admin, 'add_modal_template' );
