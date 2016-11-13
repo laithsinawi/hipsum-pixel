@@ -126,7 +126,7 @@
 	// Preview button - render html in preview area
 	$('#preview').on('click', function (e) {
 		e.preventDefault();
-		$textarea = $('#results textarea');
+		var $textarea = $('#results textarea');
 		var html = $textarea.val();
 		$textarea.remove();
 		$('#results').append(html);
