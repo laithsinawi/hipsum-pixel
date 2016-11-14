@@ -164,6 +164,13 @@
 
 	});
 
+	// Insert Into Post button
+	$('#add-to-post').on('click', function (e) {
+		e.preventDefault();
+		var content = $('#results textarea').val();
+		window.send_to_editor(content);
+	})
+
 	/*********** Helper functions *************/
 	function capitalize(word) {
 		return $.camelCase("-" + word);
