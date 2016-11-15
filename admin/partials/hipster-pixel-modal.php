@@ -135,7 +135,7 @@
 			<button type="submit" id="preview" class="btn btn-primary">Preview</button>
 			<button type="submit" id="html" class="btn btn-primary" disabled>HTML</button>
 			<button type="submit" id="clear" class="btn btn-warning">Clear</button>
-			<button type="submit" id="add-to-post" class="btn btn-primary">Inert Into Post</button>
+			<button type="submit" id="add-to-post" class="btn btn-success">Inert Into Post</button>
 		</div>
 	</div>
 

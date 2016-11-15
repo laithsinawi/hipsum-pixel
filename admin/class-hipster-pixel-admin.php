@@ -73,15 +73,15 @@ class Hipster_Pixel_Admin {
 		 * class.
 		 */
 
-//		$screen = get_current_screen();
-//		if($screen->base == 'post') {
-			wp_enqueue_script( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.js', array( 'jquery' ), $this->version, true );
-			wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipster-pixel-admin.js', array(), $this->version, true );
+		$screen = get_current_screen();
+		if($screen->base == 'post') {
+//			wp_enqueue_script( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.js', array( 'jquery' ), $this->version, true );
+			wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipster-pixel-admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-slider'), $this->version, true );
 			wp_enqueue_style( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.css', array(), $this->version, 'all' );
 			wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __DIR__ ) . 'lib/bootstrap/bootstrap.min.css', array(), $this->version, 'all' );
 			wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hipster-pixel-admin.css', array(), $this->version, 'all' );
 
-//		}
+		}
 
 
 
@@ -109,16 +109,6 @@ class Hipster_Pixel_Admin {
 		}
 		//add_thickbox();
 		include_once 'partials/hipster-pixel-modal.php';
-	}
-
-	/**
-	 * Dequeue the jQuery UI script.
-	 *
-	 * Hooked to the wp_print_scripts action, with a late priority (100),
-	 * so that it is after the script was enqueued.
-	 */
-	function wpdocs_dequeue_script() {
-		wp_dequeue_script( 'jquery-ui-core' );
 	}
 
 }
