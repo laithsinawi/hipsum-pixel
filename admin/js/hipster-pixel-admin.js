@@ -56,22 +56,6 @@
 	});
 	$('#image-height').val( $("#image-height-slider").slider("value") );
 
-
-	/************* Register Selectmenus **************/
-	// $('#type-of-text').selectmenu();
-	// $('#type-of-element').selectmenu({
-	// 	change: function(event, ui) {
-	// 		var selected = $(this).children(':selected').val()
-	// 		if( $.inArray( selected, tags_for_num_elements ) == -1 ) {
-	// 			$('#num-elements-container').slideUp('slow');
-	// 		} else {
-	// 			$('#num-elements-container').slideDown('slow');
-	// 		}
-	// 	}
-	// });
-	// $('#image-color').selectmenu();
-
-
 	$('#type-of-element').on('change', function (e) {
 		var selected = $(this).children(':selected').val()
 		if( $.inArray( selected, tags_for_num_elements ) == -1 ) {
@@ -179,12 +163,27 @@
 		e.preventDefault();
 		var preview_button = $('#preview');
 		var content = preview_button.prop('disabled') ? $('#results').html() : $('#results textarea').val();
+		content = sanatize_input(content);
 		window.send_to_editor(content);
 	});
 
 	/*********** Helper functions *************/
 	function capitalize(word) {
 		return $.camelCase("-" + word);
+	}
+
+	function sanatize_input(data){
+		// Filter out html tag not allowed
+		var regex = /<(?:p|h[1-4])>[\w\s\d,.]*<\/(?:p|h[1-4])>|(?:<ul>|<ol>)\s*((?:<li>)[\w\s\d,.]*<\/li>[\n\r\t\s]*)*<\/[o|u]l>|<img\s*(class=\"\w*\")\s*src=\"http:\/\/\w*.\w*\/(g\/)?\d*\/\d*\/\w*\"\s*\/>/g;
+		var result_arr = data.match(regex);
+		var result_str ='';
+		if(result_arr.length) {
+			for(i=0; i<result_arr.length; i++){
+				result_str += result_arr[i];
+			}
+		}
+		return result_str;
+		// console.log(result);
 	}
 
 })( jQuery );
