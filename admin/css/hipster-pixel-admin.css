@@ -24,6 +24,7 @@ input.slider {
 }
 #TB_ajaxContent {
     overflow-x: hidden !important;
+    min-height: 600px !important;
 }
 
 @media (min-width: 992px) {

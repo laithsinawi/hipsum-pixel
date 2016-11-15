@@ -73,15 +73,15 @@ class Hipster_Pixel_Admin {
 		 * class.
 		 */
 
-		$screen = get_current_screen();
-		if($screen->base == 'post') {
+//		$screen = get_current_screen();
+//		if($screen->base == 'post') {
 //			wp_enqueue_script( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.js', array( 'jquery' ), $this->version, true );
 			wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipster-pixel-admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-slider'), $this->version, true );
 			wp_enqueue_style( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.css', array(), $this->version, 'all' );
 			wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __DIR__ ) . 'lib/bootstrap/bootstrap.min.css', array(), $this->version, 'all' );
 			wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hipster-pixel-admin.css', array(), $this->version, 'all' );
 
-		}
+//		}
 
 
 
@@ -96,7 +96,7 @@ class Hipster_Pixel_Admin {
 		global $post;
 
 		?>
-			<a href="#TB_inline?height=600&width=782&inlineId=hipster-pixel-modal" class="thickbox button" id="button-hipster-pixel-modal" title="Hipster Pixel HTML Builder">Hipster Pixel</a>
+			<a href="#TB_inline?width=782&inlineId=hipster-pixel-modal" class="thickbox button" id="button-hipster-pixel-modal" title="Hipster Pixel HTML Builder">Hipster Pixel</a>
 	<?php
 
 	}
