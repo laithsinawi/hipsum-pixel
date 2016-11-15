@@ -49,14 +49,13 @@
 
 						<div class="form-group" id="num-elements-container">
 							<label for="num-elements" class="control-label">Number of elements:</label>
-							<input type="text" id="num-elements" readonly
-							       style="border:0; color:#f6931f; font-weight:bold;">
+							<input type="text" id="num-elements" class="slider" readonly>
 							<div id="num-elements-slider"></div>
 						</div>
 
 						<div class="form-group">
 							<label for="num-words" class="control-label">Number of words:</label>
-							<input type="text" id="num-words" readonly style="border:0; color:#f6931f; font-weight:bold;">
+							<input type="text" id="num-words" class="slider" readonly>
 							<div id="num-words-slider"></div>
 						</div>
 
@@ -91,30 +90,29 @@
 
 						<div class="form-group">
 							<label for="image-width" class="control-label">Image width:</label>
-							<input type="text" id="image-width" readonly style="border:0; color:#f6931f; font-weight:bold;">
+							<input type="text" id="image-width" class="slider" readonly>
 							<div id="image-width-slider"></div>
 						</div>
 
 						<div class="form-group">
 							<label for="image-height" class="control-label">Image height:</label>
-							<input type="text" id="image-height" readonly
-							       style="border:0; color:#f6931f; font-weight:bold;">
+							<input type="text" id="image-height" class="slider" readonly>
 							<div id="image-height-slider"></div>
 						</div>
 
 						<div class="form-group">
 							<label class="control-label block">Image Align</label>
 							<label class="radio-inline">
-								<input type="radio" name="image-align" id="image-align-none" value="align-none" checked> None
+								<input type="radio" name="image-align" id="image-align-none" value="alignnone" checked> None
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="image-align" id="image-align-left" value="align-left"> Left
+								<input type="radio" name="image-align" id="image-align-left" value="alignleft"> Left
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="image-align" id="image-align-right" value="align-right"> Right
+								<input type="radio" name="image-align" id="image-align-right" value="alignright"> Right
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="image-align" id="image-align-center" value="align-center"> Center
+								<input type="radio" name="image-align" id="image-align-center" value="aligncenter"> Center
 							</label>
 						</div>
 

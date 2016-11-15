@@ -1,27 +1,33 @@
 #form-container-textgen, #form-container-imagegen {
     max-width: 380px;
 }
-textarea.results-box {
+#results textarea {
     border: 0;
+    box-shadow: none !important;
     width: 100%
 }
-.align-none {
-    margin: 10px auto;
+.control-label {
+    display: inline !important;
 }
-.align-left {
-    float: left;
-    margin: 0 10px 10px 0;
+input.slider {
+    border:0;
+    color:#f6931f;
+    font-weight:bold;
+    background: #fff !important;
+    box-shadow: none !important;
 }
-.align-right {
-    float: right;
-    margin: 0 0 10px 10px;
+.radio-inline {
+    display: inline-block !important;
 }
 .block {
-    display: block;
+    display: block !important;
+}
+#TB_ajaxContent {
+    overflow-x: hidden !important;
 }
 
 @media (min-width: 992px) {
     .container {
-        width: 900px !important;
+        width: 750px !important;
     }
 }

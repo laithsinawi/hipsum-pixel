@@ -58,18 +58,28 @@
 
 
 	/************* Register Selectmenus **************/
-	$('#type-of-text').selectmenu();
-	$('#type-of-element').selectmenu({
-		change: function(event, ui) {
-			var selected = $(this).children(':selected').val()
-			if( $.inArray( selected, tags_for_num_elements ) == -1 ) {
-				$('#num-elements-container').slideUp('slow');
-			} else {
-				$('#num-elements-container').slideDown('slow');
-			}
+	// $('#type-of-text').selectmenu();
+	// $('#type-of-element').selectmenu({
+	// 	change: function(event, ui) {
+	// 		var selected = $(this).children(':selected').val()
+	// 		if( $.inArray( selected, tags_for_num_elements ) == -1 ) {
+	// 			$('#num-elements-container').slideUp('slow');
+	// 		} else {
+	// 			$('#num-elements-container').slideDown('slow');
+	// 		}
+	// 	}
+	// });
+	// $('#image-color').selectmenu();
+
+
+	$('#type-of-element').on('change', function (e) {
+		var selected = $(this).children(':selected').val()
+		if( $.inArray( selected, tags_for_num_elements ) == -1 ) {
+			$('#num-elements-container').slideUp('slow');
+		} else {
+			$('#num-elements-container').slideDown('slow');
 		}
 	});
-	$('#image-color').selectmenu();
 
 
 	/************* Populate categories selectmenu ****************/
@@ -78,7 +88,7 @@
 			+ capitalize(image_categories[i]) + '</option>';
 	}
 	$('#image-category').append(options);
-	$('#image-category').selectmenu();
+	// $('#image-category').selectmenu();
 
 	/************* Event handlers *****************/
 	// Insert HTML button
@@ -167,9 +177,10 @@
 	// Insert Into Post button
 	$('#add-to-post').on('click', function (e) {
 		e.preventDefault();
-		var content = $('#results textarea').val();
+		var preview_button = $('#preview');
+		var content = preview_button.prop('disabled') ? $('#results').html() : $('#results textarea').val();
 		window.send_to_editor(content);
-	})
+	});
 
 	/*********** Helper functions *************/
 	function capitalize(word) {
