@@ -1,6 +1,9 @@
 #form-container-textgen, #form-container-imagegen {
     max-width: 380px;
 }
+#TB_window, #TB_ajaxContent {
+    width: 790px !important;
+}
 #results textarea {
     border: 0;
     box-shadow: none !important;
@@ -25,6 +28,15 @@ input.slider {
 #TB_ajaxContent {
     overflow-x: hidden !important;
     min-height: 700px !important;
+}
+span.hp-icon {
+    background: url(../img/icon.png) 50% 50% no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    top: 3px;
+    position: relative;
 }
 
 @media (min-width: 992px) {
