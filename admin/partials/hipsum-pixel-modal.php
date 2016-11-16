@@ -1,11 +1,11 @@
-<div id="hipster-pixel-modal" style="display:none;">
+<div id="hipsum-pixel-modal" style="display:none;">
 
 <!--	<div class="wrap">-->
 <!--		<h2>Hipster Pixel</h2>-->
 <!--		<form id="">-->
 <!--			<table class="form-table">-->
 <!--				<tbody>-->
-<!--					<button class="button button-primary button-large" id="hipster-pixel-shortcode-generate">Generate HTML</button>-->
+<!--					<button class="button button-primary button-large" id="hipsum-pixel-shortcode-generate">Generate HTML</button>-->
 <!--				</tbody>-->
 <!--			</table>-->
 <!--		</form>-->

@@ -6,8 +6,8 @@
  * @link       http://www.sinawiwebdesign.com
  * @since      1.0.0
  *
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/includes
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/includes
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/includes
  * @author     Laith Sinawi <info@sinawiwebdesign.com>
  */
-class Hipster_Pixel_Loader {
+class Hipsum_Pixel_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

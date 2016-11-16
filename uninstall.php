@@ -22,7 +22,7 @@
  * @link       http://www.sinawiwebdesign.com
  * @since      1.0.0
  *
- * @package    Hipster_Pixel
+ * @package    Hipsum_Pixel
  */
 
 // If uninstall not called from WordPress, then exit.

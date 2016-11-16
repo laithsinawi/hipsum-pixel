@@ -9,8 +9,8 @@
  * @link       http://www.sinawiwebdesign.com
  * @since      1.0.0
  *
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/includes
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/includes
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/includes
  * @author     Laith Sinawi <info@sinawiwebdesign.com>
  */
-class Hipster_Pixel_i18n {
+class Hipsum_Pixel_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Hipster_Pixel_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'hipster-pixel',
+			'hipsum-pixel',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

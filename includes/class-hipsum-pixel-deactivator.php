@@ -6,8 +6,8 @@
  * @link       http://www.sinawiwebdesign.com
  * @since      1.0.0
  *
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/includes
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/includes
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/includes
  * @author     Laith Sinawi <info@sinawiwebdesign.com>
  */
-class Hipster_Pixel_Deactivator {
+class Hipsum_Pixel_Deactivator {
 
 	/**
 	 * Short Description. (use period)

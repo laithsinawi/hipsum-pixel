@@ -9,8 +9,8 @@
  * @link       http://www.sinawiwebdesign.com
  * @since      1.0.0
  *
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/includes
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/includes
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/includes
  * @author     Laith Sinawi <info@sinawiwebdesign.com>
  */
-class Hipster_Pixel {
+class Hipsum_Pixel {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Hipster_Pixel {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Hipster_Pixel_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Hipsum_Pixel_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -68,7 +68,7 @@ class Hipster_Pixel {
 	 */
 	public function __construct() {
 
-		$this->plugin_name = 'hipster-pixel';
+		$this->plugin_name = 'hipsum-pixel';
 		$this->version = '1.0.0';
 
 		$this->load_dependencies();
@@ -82,10 +82,10 @@ class Hipster_Pixel {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Hipster_Pixel_Loader. Orchestrates the hooks of the plugin.
-	 * - Hipster_Pixel_i18n. Defines internationalization functionality.
-	 * - Hipster_Pixel_Admin. Defines all hooks for the admin area.
-	 * - Hipster_Pixel_Public. Defines all hooks for the public side of the site.
+	 * - Hipsum_Pixel_Loader. Orchestrates the hooks of the plugin.
+	 * - Hipsum_Pixel_i18n. Defines internationalization functionality.
+	 * - Hipsum_Pixel_Admin. Defines all hooks for the admin area.
+	 * - Hipsum_Pixel_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -99,27 +99,27 @@ class Hipster_Pixel {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-hipster-pixel-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-hipsum-pixel-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-hipster-pixel-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-hipsum-pixel-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-hipster-pixel-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-hipsum-pixel-admin.php';
 
-		$this->loader = new Hipster_Pixel_Loader();
+		$this->loader = new Hipsum_Pixel_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Hipster_Pixel_i18n class in order to set the domain and to register the hook
+	 * Uses the Hipsum_Pixel_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -127,7 +127,7 @@ class Hipster_Pixel {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Hipster_Pixel_i18n();
+		$plugin_i18n = new Hipsum_Pixel_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -142,7 +142,7 @@ class Hipster_Pixel {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Hipster_Pixel_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Hipsum_Pixel_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_print_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -175,7 +175,7 @@ class Hipster_Pixel {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Hipster_Pixel_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Hipsum_Pixel_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

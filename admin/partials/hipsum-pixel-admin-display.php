@@ -8,8 +8,8 @@
  * @link       http://www.sinawiwebdesign.com
  * @since      1.0.0
  *
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/admin/partials
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/admin/partials
  */
 ?>
 

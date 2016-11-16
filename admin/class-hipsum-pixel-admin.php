@@ -6,8 +6,8 @@
  * @link       http://www.sinawiwebdesign.com
  * @since      1.0.0
  *
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/admin
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Hipster_Pixel
- * @subpackage Hipster_Pixel/admin
+ * @package    Hipsum_Pixel
+ * @subpackage Hipsum_Pixel/admin
  * @author     Laith Sinawi <info@sinawiwebdesign.com>
  */
-class Hipster_Pixel_Admin {
+class Hipsum_Pixel_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -65,18 +65,18 @@ class Hipster_Pixel_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Hipster_Pixel_Loader as all of the hooks are defined
+		 * defined in Hipsum_Pixel_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Hipster_Pixel_Loader will then create the relationship
+		 * The Hipsum_Pixel_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-			wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipster-pixel-admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-slider'), $this->version, true );
+			wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipsum-pixel-admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-slider'), $this->version, true );
 			wp_enqueue_style( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.css', array(), $this->version, 'all' );
 			wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __DIR__ ) . 'lib/bootstrap/bootstrap.min.css', array(), $this->version, 'all' );
-			wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hipster-pixel-admin.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hipsum-pixel-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -89,7 +89,7 @@ class Hipster_Pixel_Admin {
 		global $post;
 
 		?>
-			<a href="#TB_inline?width=782&inlineId=hipster-pixel-modal" class="thickbox button" id="button-hipster-pixel-modal" title="Hipster Pixel HTML Builder"> <span class="hp-icon"></span> Hipster Pixel</a>
+			<a href="#TB_inline?width=782&inlineId=hipsum-pixel-modal" class="thickbox button" id="button-hipsum-pixel-modal" title="Hipster Pixel HTML Builder"> <span class="hp-icon"></span> Hipster Pixel</a>
 	<?php
 
 	}
@@ -101,7 +101,7 @@ class Hipster_Pixel_Admin {
 			return;
 		}
 
-		include_once 'partials/hipster-pixel-modal.php';
+		include_once 'partials/hipsum-pixel-modal.php';
 	}
 
 }
