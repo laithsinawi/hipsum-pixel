@@ -72,7 +72,7 @@
             + capitalize(image_categories[i]) + '</option>';
     }
     $('#image-category').append(options);
-    // $('#image-category').selectmenu();
+
 
     /************* Event handlers *****************/
     // Insert HTML button
@@ -164,6 +164,7 @@
         var preview_button = $('#preview');
         var content = preview_button.prop('disabled') ? $('#results').html() : $('#results textarea').val();
         content = sanatize_input(content);
+        // console.log(content);
         window.send_to_editor(content);
     });
 
@@ -185,7 +186,6 @@
             }
         }
         return result_str;
-        //console.log(result_str);
     }
 
 })(jQuery);
