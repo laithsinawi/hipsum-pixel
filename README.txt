@@ -1,14 +1,13 @@
 === Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: http://www.sinawiwebdesign.com
-Tags: comments, spam
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+Contributors: laith3
+Tags: lorem ipsum, lorem, ipsum, dummy text, content generator, hipsum, randomtext, lorempixel, lorem pixel, Hipsum Pixel
+Requires at least: 4.1.0
+Tested up to: 4.6.1
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Creates a button on the WordPress editor toolbar to insert a configurable amount of Lorem Ipsum or Gibberish placeholder text and random images using two data services to retrieve data (randomtext.me and lorempixel.com)
 
 == Description ==
 
