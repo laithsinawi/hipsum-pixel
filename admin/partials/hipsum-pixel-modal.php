@@ -1,15 +1,5 @@
 <div id="hipsum-pixel-modal" style="display:none;">
 
-<!--	<div class="wrap">-->
-<!--		<h2>Hipster Pixel</h2>-->
-<!--		<form id="">-->
-<!--			<table class="form-table">-->
-<!--				<tbody>-->
-<!--					<button class="button button-primary button-large" id="hipsum-pixel-shortcode-generate">Generate HTML</button>-->
-<!--				</tbody>-->
-<!--			</table>-->
-<!--		</form>-->
-<!--	</div>-->
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6">

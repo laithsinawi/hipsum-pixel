@@ -89,7 +89,7 @@ class Hipsum_Pixel_Admin {
 		global $post;
 
 		?>
-			<a href="#TB_inline?width=782&inlineId=hipsum-pixel-modal" class="thickbox button" id="button-hipsum-pixel-modal" title="Hipster Pixel HTML Builder"> <span class="hp-icon"></span> Hipster Pixel</a>
+			<a href="#TB_inline?width=782&inlineId=hipsum-pixel-modal" class="thickbox button" id="button-hipsum-pixel-modal" title="Hipsum Pixel HTML Builder"> <span class="hp-icon"></span> Hipsum Pixel</a>
 	<?php
 
 	}
