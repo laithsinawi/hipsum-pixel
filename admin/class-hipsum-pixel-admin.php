@@ -55,7 +55,7 @@ class Hipsum_Pixel_Admin {
 	}
 
 	/**
-	 * Register the JavaScript for the admin area.
+	 * Register the JavaScript and CSS for the admin area.
 	 *
 	 * @since    1.0.0
 	 */
