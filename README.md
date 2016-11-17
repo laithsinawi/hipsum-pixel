@@ -7,7 +7,7 @@
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
-Creates a button on the WordPress editor toolbar to insert a configurable amount of Lorem Ipsum or Gibberish placeholder text and random images using two data services (randomtext.me and lorempixel.com) to retrieve data and LoremPixel for getting random images from multiple different categories.
+Creates a button on the WordPress editor toolbar to insert a configurable amount of Lorem Ipsum or Gibberish placeholder text and random images using two data services (randomtext.me and lorempixel.com).
 
 ## Description 
 
