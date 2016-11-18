@@ -7,7 +7,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Creates a button on the WordPress editor toolbar to insert a configurable amount of Lorem Ipsum or Gibberish placeholder text and random images using two data services (randomtext.me and lorempixel.com).
+Creates a button on the WordPress editor toolbar to insert a configurable amount of Lorem Ipsum or Gibberish placeholder text and random images.
 
 == Description ==
 
@@ -22,7 +22,8 @@ Hipsum Pixel brings the power of two data services into a single WordPress plugi
 *   Configurable image width and height and alignment using native WordPress classes (left, right, center)
 *   Preview results before inserting into post
 
-Image Categories:
+### Image Categories:
+
 *   Abstract
 *   Animals
 *   Business
