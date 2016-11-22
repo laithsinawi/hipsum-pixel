@@ -3,7 +3,7 @@
 
     /************ Variables ************/
     var options = '';
-    var base_url_randomtext = 'http://www.randomtext.me/api/';
+    var base_url_randomtext = '//www.randomtext.me/api/';
     var base_url_lorempixel = 'http://lorempixel.com/';
     var tags_for_num_elements = ['p', 'ol', 'ul'];
     var image_categories = ['abstract', 'city', 'people', 'transport', 'animals', 'food', 'nature',

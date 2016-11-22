@@ -38,6 +38,10 @@ Hipsum Pixel brings the power of two data services into a single WordPress plugi
 *   Technics
 *   Transport
 
+### Limitations:
+
+*   Random images do not work over https due to data service LoremPixel limitation (only works over http).  This will be fixed in the next version.
+
 == Installation ==
 
 1. Upload `hipsum-pixel.php` to the `/wp-content/plugins/` directory
