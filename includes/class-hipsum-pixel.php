@@ -147,6 +147,7 @@ class Hipsum_Pixel {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'media_buttons', $plugin_admin, 'add_media_button' );
 		$this->loader->add_action( 'admin_footer', $plugin_admin, 'add_modal_template' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_settings_page' );
 
 	}
 

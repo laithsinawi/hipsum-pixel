@@ -32,6 +32,15 @@ class Hipsum_Pixel_Admin {
 	private $plugin_name;
 
 	/**
+	 * Holds the values to be used in the fields callbacks
+	 *
+	 * @since    1.0.0
+	 * @access    private
+	 * @var    string $options The options for this plugin
+	 */
+	private $options;
+
+	/**
 	 * The version of this plugin.
 	 *
 	 * @since    1.0.0
@@ -51,6 +60,7 @@ class Hipsum_Pixel_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->options = get_option('hp_settings');
 
 	}
 
@@ -102,6 +112,45 @@ class Hipsum_Pixel_Admin {
 		}
 
 		include_once 'partials/hipsum-pixel-modal.php';
+	}
+
+	/************** OPTIONS PAGE RELATED METHODS *******************/
+
+	/**
+	 * Add options page
+	 */
+	public function add_settings_page() {
+		// This page will in admin mainn menu
+		add_submenu_page(
+			'tools.php',
+			__( 'Hipsum Pixel Options', 'hipsum-pixel' ),
+			__( 'Hipsum Pixel Options', 'hipsum-pixel' ),
+			'manage_options',
+			$this->plugin_name,
+			array( $this, 'create_options_page' )
+		);
+
+	}
+
+	/**
+	 * Callback for Options page
+	 */
+	public function create_options_page() {
+		// Set class property
+		$this->options = get_option( 'hp_settings' );
+		?>
+		<div class="wrap">
+			<h1>Hipsum Pixel Settings</h1>
+			<form method="post" action="options.php">
+				<?php
+				// This prints out all hidden setting fields
+//				settings_fields( 'fgp_option_group' );
+//				do_settings_sections( $this->plugin_name );
+//				submit_button();
+				?>
+			</form>
+		</div>
+		<?php
 	}
 
 }
