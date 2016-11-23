@@ -146,6 +146,7 @@ class Hipsum_Pixel_Admin {
 		$this->options = get_option( 'hp_settings' );
 		?>
 		<div class="wrap">
+			<h1>Fancy Grid Portfolio</h1>
 			<form method="post" action="options.php">
 				<?php
 				// This prints out all hidden setting fields
@@ -181,6 +182,19 @@ class Hipsum_Pixel_Admin {
 			array( $this, 'hp_fields_callback' ), // Callback
 			$this->plugin_name // Page
 		);
+
+		add_settings_field(
+			'image_source',
+			'Image Source',
+			array( $this, 'image_source_callback' ),
+			$this->plugin_name,
+			$this->plugin_name . '_fields',
+			array(
+				'label_for' => 'hp_image_source',
+				'desc'      => 'Choose random image source.  If you need your images to load over https, use PlaceKitten.'
+			)
+		);
+
 	}
 
 	/**
@@ -196,6 +210,20 @@ class Hipsum_Pixel_Admin {
 	 */
 	public function print_section_info() {
 		include_once 'partials/hipsum-pixel-section-info.php';
+	}
+
+	/**
+	 *
+	 */
+	public function image_source_callback( $args ) {
+		?>
+		<label for="hp_settings[image_source]">
+		<input type="radio" name="hp_settings[image_source]"
+		       value="lorempixel" <?php checked( 'lorempixel', $this->options['image_source'], true ); ?>>LoremPixel
+		</label>
+		<input type="radio" name="hp_settings[image_source]"
+		       value="placekitten" <?php checked( 'placekitten', $this->options['image_source'], true ); ?>>PlaceKitten
+		<?php
 	}
 
 }
