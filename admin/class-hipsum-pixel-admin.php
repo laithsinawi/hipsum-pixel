@@ -84,15 +84,25 @@ class Hipsum_Pixel_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipsum-pixel-admin.js', array(
-			'jquery',
-			'jquery-ui-core',
-			'jquery-ui-slider'
-		), $this->version, true );
-		wp_enqueue_style( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __DIR__ ) . 'lib/bootstrap/bootstrap.min.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hipsum-pixel-admin.css', array(), $this->version, 'all' );
+		if ( function_exists( 'get_current_screen' ) ) {
+			$screen = get_current_screen();
+			if ( $screen->id == 'post' ) {
+				wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipsum-pixel-admin.js', array(
+					'jquery',
+					'jquery-ui-core',
+					'jquery-ui-slider'
+				), $this->version, true );
+				wp_enqueue_style( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.css', array(), $this->version, 'all' );
+				wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __DIR__ ) . 'lib/bootstrap/bootstrap.min.css', array(), $this->version, 'all' );
+				wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hipsum-pixel-admin.css', array(), $this->version, 'all' );
+			}
+			if ( $screen->id == 'tools_page_hipsum-pixel' ) {
+				wp_enqueue_style( $this->plugin_name . '-settings', plugin_dir_url( __FILE__ ) . 'css/hipsum-pixel-settings.css', array(), $this->version, 'all' );
+			}
 
+//			var_dump($screen);
+
+		}
 	}
 
 	/**
@@ -150,7 +160,7 @@ class Hipsum_Pixel_Admin {
 			<form method="post" action="options.php">
 				<?php
 				// This prints out all hidden setting fields
-				settings_fields( 'hp_option_group' );
+				settings_fields( 'hp_options_group' );
 				do_settings_sections( $this->plugin_name );
 				submit_button();
 				?>
@@ -164,9 +174,9 @@ class Hipsum_Pixel_Admin {
 	 */
 	public function add_settings() {
 		register_setting(
-			'hp_option_group', // Option group
+			'hp_options_group', // Option group
 			'hp_settings', // Option name
-			array( $this, 'sanitize' ) // Sanitize
+			array( $this, 'sanitize_fields' ) // Sanitize
 		);
 
 		add_settings_section(
@@ -192,7 +202,7 @@ class Hipsum_Pixel_Admin {
 			array(
 				'label_for' => 'image_source',
 				'desc'      => 'Choose random image source.  If you need your images to load over https, use PlaceKitten.',
-				'class' => 'image-source'
+				'class'     => 'image-source'
 			)
 		);
 
@@ -217,17 +227,36 @@ class Hipsum_Pixel_Admin {
 	 *  Print out image source fields
 	 */
 	public function image_source_callback( $args ) {
-		$class = $args['class'] != '' ? $args['class'] : '';
+		$class        = isset( $args['class'] ) ? $args['class'] : '';
+		$image_source = isset( $this->options['image_source'] ) ? $this->options['image_source'] : 'lorempixel';
 		?>
 		<label for="hp_settings[image_source]" class="<?php echo $class; ?>">
 			<input type="radio" name="hp_settings[image_source]"
-			       value="lorempixel" <?php checked( 'lorempixel', $this->options['image_source'], true ); ?>>LoremPixel <span>(for random images with multiple categories in color or gray scale - <span class="important">DOES NOT LOAD IMAGES OVER HTTPS</span> <a target="_blank" href="http://lorempixel.com/">LoremPixel</a>)</span>
+			       value="lorempixel" <?php checked( 'lorempixel', $image_source, true ); ?>>LoremPixel
+			<span>(for random images with multiple categories in color or gray scale - <a
+					target="_blank" href="http://lorempixel.com/">LoremPixel</a> </span> <span class="important">DOES NOT LOAD IMAGES OVER HTTPS)</span>
 		</label>
 		<label for="hp_settings[image_source]" class="<?php echo $class; ?>">
-		<input type="radio" name="hp_settings[image_source]"
-		       value="placekitten" <?php checked( 'placekitten', $this->options['image_source'], true ); ?>>PlaceKitten <span>(for random cute kitten images in color or gray scale <a target="_blank" href="http://placekitten.com/">PlaceKitten</a>)</span>
+			<input type="radio" name="hp_settings[image_source]"
+			       value="placekitten" <?php checked( 'placekitten', $image_source, true ); ?>>PlaceKitten
+			<span>(for random cute kitten images in color or gray scale <a target="_blank"
+			                                                               href="http://placekitten.com/">PlaceKitten</a>)</span>
 		</label>
 		<?php
+	}
+
+	/**
+	 * Sanitize input fields
+	 */
+	public function sanitize_fields( $input ) {
+		$new_input = array();
+
+		if ( isset( $input['image_source'] ) ) {
+			$new_input['image_source'] = ( 'lorempixel' == $input['image_source'] ) ||
+			                             ( 'placekitten' == $input['image_source'] ) ? $input['image_source'] : '';
+		}
+
+		return $new_input;
 	}
 
 }
