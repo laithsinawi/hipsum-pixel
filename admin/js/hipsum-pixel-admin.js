@@ -3,8 +3,9 @@
 
     /************ Variables ************/
     var options = '';
+    console.log('LOCALLIZED SCRIPT DATA: ' + HIPSUM_PIXEL.image_source);
     var base_url_randomtext = '//www.randomtext.me/api/';
-    var base_url_lorempixel = 'http://lorempixel.com/';
+    var base_url_image = HIPSUM_PIXEL.image_source == 'lorempixel' ? 'http://lorempixel.com/' :  'https://placekitten.com/';
     var tags_for_num_elements = ['p', 'ol', 'ul'];
     var image_categories = ['abstract', 'city', 'people', 'transport', 'animals', 'food', 'nature',
         'business', 'nightlife', 'sports', 'cats', 'fashion', 'technics'];
@@ -108,7 +109,13 @@
         var image_category = $('#image-category').val();
         var image_color = $('#image-color').val() == 'g' ? $('#image-color').val() + '/' : '';
         var image_align = $('input[name="image-align"]:checked').val();
-        var query = base_url_lorempixel + image_color + image_width + '/' + image_height + '/' + image_category.toLowerCase();
+        var query = '';
+        if(HIPSUM_PIXEL.image_source == 'lorempixel') {
+            query = base_url_image + image_color + image_width + '/' + image_height + '/' + image_category.toLowerCase();
+        } else {
+            query = base_url_image + image_color + image_width + '/' + image_height;
+        }
+
         var image = '<img class="' + image_align + '" src="' + query + '" />';
 
         $("#results textarea").insertAtCaret(image);

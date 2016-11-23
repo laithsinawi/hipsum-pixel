@@ -86,7 +86,8 @@ class Hipsum_Pixel_Admin {
 
 		if ( function_exists( 'get_current_screen' ) ) {
 			$screen = get_current_screen();
-			if ( $screen->id == 'post' ) {
+			if ( $screen->id == 'post' || $screen->id == 'page' ) {
+
 				wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipsum-pixel-admin.js', array(
 					'jquery',
 					'jquery-ui-core',
@@ -95,6 +96,14 @@ class Hipsum_Pixel_Admin {
 				wp_enqueue_style( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.css', array(), $this->version, 'all' );
 				wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __DIR__ ) . 'lib/bootstrap/bootstrap.min.css', array(), $this->version, 'all' );
 				wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hipsum-pixel-admin.css', array(), $this->version, 'all' );
+
+				wp_localize_script( $this->plugin_name . '-admin', 'HIPSUM_PIXEL',
+					array(
+						'token'        => wp_create_nonce( 'hp-token' ),
+						'image_source' => $this->options['image_source']
+					)
+				);
+
 			}
 			if ( $screen->id == 'tools_page_hipsum-pixel' ) {
 				wp_enqueue_style( $this->plugin_name . '-settings', plugin_dir_url( __FILE__ ) . 'css/hipsum-pixel-settings.css', array(), $this->version, 'all' );
@@ -111,12 +120,16 @@ class Hipsum_Pixel_Admin {
 	 *
 	 */
 	public function add_media_button() {
-		global $post;
 
-		?>
-		<a href="#TB_inline?width=782&inlineId=hipsum-pixel-modal" class="thickbox button"
-		   id="button-hipsum-pixel-modal" title="Hipsum Pixel HTML Builder"> <span class="hp-icon"></span> Hipsum Pixel</a>
-		<?php
+		if ( function_exists( 'get_current_screen' ) ) {
+			$screen = get_current_screen();
+			if ( $screen->id == 'post' || $screen->id == 'page' ) : ?>
+				<a href="#TB_inline?width=782&inlineId=hipsum-pixel-modal" class="thickbox button"
+				   id="button-hipsum-pixel-modal" title="Hipsum Pixel HTML Builder"> <span class="hp-icon"></span>
+					Hipsum
+					Pixel</a>
+			<?php endif;
+		}
 
 	}
 

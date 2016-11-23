@@ -61,12 +61,14 @@
 					<form class="form">
 
 						<div class="row"><!-- nested row -->
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label for="image-category" class="control-label block">Category</label>
-									<select id="image-category" class="form-control"></select>
+							<?php if ( isset($this->options['image_source']) &&  $this->options['image_source'] == 'lorempixel' ) : ?>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="image-category" class="control-label block">Category</label>
+										<select id="image-category" class="form-control"></select>
+									</div>
 								</div>
-							</div>
+							<?php endif; ?>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="image-color" class="control-label block">Color or Grayscale</label>
@@ -93,7 +95,8 @@
 						<div class="form-group">
 							<label class="control-label block">Image Align</label>
 							<label class="radio-inline">
-								<input type="radio" name="image-align" id="image-align-none" value="alignnone" checked> None
+								<input type="radio" name="image-align" id="image-align-none" value="alignnone" checked>
+								None
 							</label>
 							<label class="radio-inline">
 								<input type="radio" name="image-align" id="image-align-left" value="alignleft"> Left
@@ -102,12 +105,14 @@
 								<input type="radio" name="image-align" id="image-align-right" value="alignright"> Right
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="image-align" id="image-align-center" value="aligncenter"> Center
+								<input type="radio" name="image-align" id="image-align-center" value="aligncenter">
+								Center
 							</label>
 						</div>
 
 
-						<button type="submit" id="generate-image" class="btn btn-primary center-block">Insert Image</button>
+						<button type="submit" id="generate-image" class="btn btn-primary center-block">Insert Image
+						</button>
 					</form>
 				</div>
 			</div>
