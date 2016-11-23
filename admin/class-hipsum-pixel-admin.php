@@ -145,12 +145,12 @@ class Hipsum_Pixel_Admin {
 		// Set class property
 		$this->options = get_option( 'hp_settings' );
 		?>
-		<div class="wrap">
+		<div class="wrap hp-options">
 			<h1>Fancy Grid Portfolio</h1>
 			<form method="post" action="options.php">
 				<?php
 				// This prints out all hidden setting fields
-				//				settings_fields( 'fgp_option_group' );
+				settings_fields( 'hp_option_group' );
 				do_settings_sections( $this->plugin_name );
 				submit_button();
 				?>
@@ -179,7 +179,7 @@ class Hipsum_Pixel_Admin {
 		add_settings_section(
 			$this->plugin_name . '_fields', // ID
 			'Settings', // Title
-			array( $this, 'hp_fields_callback' ), // Callback
+			array( $this, 'fields_callback' ), // Callback
 			$this->plugin_name // Page
 		);
 
@@ -190,39 +190,43 @@ class Hipsum_Pixel_Admin {
 			$this->plugin_name,
 			$this->plugin_name . '_fields',
 			array(
-				'label_for' => 'hp_image_source',
-				'desc'      => 'Choose random image source.  If you need your images to load over https, use PlaceKitten.'
+				'label_for' => 'image_source',
+				'desc'      => 'Choose random image source.  If you need your images to load over https, use PlaceKitten.',
+				'class' => 'image-source'
 			)
 		);
 
 	}
 
 	/**
-	 * Print the Fields section text
+	 * Print the fields section text
 	 */
-	public function hp_fields_callback() {
+	public function fields_callback() {
 		// Output for fields section - doing nothing!
 		// Callback function required by add_settings_section()
 	}
 
 	/**
-	 * Print the Section text
+	 * Print the section text
 	 */
 	public function print_section_info() {
 		include_once 'partials/hipsum-pixel-section-info.php';
 	}
 
 	/**
-	 *
+	 *  Print out image source fields
 	 */
 	public function image_source_callback( $args ) {
+		$class = $args['class'] != '' ? $args['class'] : '';
 		?>
-		<label for="hp_settings[image_source]">
-		<input type="radio" name="hp_settings[image_source]"
-		       value="lorempixel" <?php checked( 'lorempixel', $this->options['image_source'], true ); ?>>LoremPixel
+		<label for="hp_settings[image_source]" class="<?php echo $class; ?>">
+			<input type="radio" name="hp_settings[image_source]"
+			       value="lorempixel" <?php checked( 'lorempixel', $this->options['image_source'], true ); ?>>LoremPixel <span>(for random images with multiple categories in color or gray scale - <span class="important">DOES NOT LOAD IMAGES OVER HTTPS</span> <a target="_blank" href="http://lorempixel.com/">LoremPixel</a>)</span>
 		</label>
+		<label for="hp_settings[image_source]" class="<?php echo $class; ?>">
 		<input type="radio" name="hp_settings[image_source]"
-		       value="placekitten" <?php checked( 'placekitten', $this->options['image_source'], true ); ?>>PlaceKitten
+		       value="placekitten" <?php checked( 'placekitten', $this->options['image_source'], true ); ?>>PlaceKitten <span>(for random cute kitten images in color or gray scale <a target="_blank" href="http://placekitten.com/">PlaceKitten</a>)</span>
+		</label>
 		<?php
 	}
 

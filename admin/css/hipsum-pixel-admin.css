@@ -39,6 +39,15 @@ span.hp-icon {
     position: relative;
 }
 
+/* Options page */
+.wrap.hp-options label.image-source{
+    display: block !important;
+    margin-bottom: 10px;
+}
+.wrap.hp-options label.image-source span {
+    font-weight: normal;
+}
+
 /* Native WordPress classes */
 /* =WordPress Core
 -------------------------------------------------------------- */
