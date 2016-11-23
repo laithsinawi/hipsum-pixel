@@ -1,0 +1,2 @@
+<h1>Hipsum Pixel Settings</h1>
+<p>Lorem ipsum varius interdum nullam per vehicula laoreet vivamus tortor, orci nunc ad primis orci sit duis diam, praesent ut ligula amet ipsum mollis turpis lectus velit commodo nam tristique conubia arcu malesuada.</p>

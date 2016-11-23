@@ -27,7 +27,7 @@ class Hipsum_Pixel_Admin {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
+	 * @var      string $plugin_name The ID of this plugin.
 	 */
 	private $plugin_name;
 
@@ -45,7 +45,7 @@ class Hipsum_Pixel_Admin {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
+	 * @var      string $version The current version of this plugin.
 	 */
 	private $version;
 
@@ -53,14 +53,15 @@ class Hipsum_Pixel_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
+	 *
+	 * @param      string $plugin_name The name of this plugin.
+	 * @param      string $version The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
-		$this->options = get_option('hp_settings');
+		$this->version     = $version;
+		$this->options     = get_option( 'hp_settings' );
 
 	}
 
@@ -83,10 +84,14 @@ class Hipsum_Pixel_Admin {
 		 * class.
 		 */
 
-			wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipsum-pixel-admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-slider'), $this->version, true );
-			wp_enqueue_style( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.css', array(), $this->version, 'all' );
-			wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __DIR__ ) . 'lib/bootstrap/bootstrap.min.css', array(), $this->version, 'all' );
-			wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hipsum-pixel-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'js/hipsum-pixel-admin.js', array(
+			'jquery',
+			'jquery-ui-core',
+			'jquery-ui-slider'
+		), $this->version, true );
+		wp_enqueue_style( $this->plugin_name . '-jquery-ui', plugin_dir_url( __DIR__ ) . 'lib/jquery-ui/jquery-ui.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __DIR__ ) . 'lib/bootstrap/bootstrap.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '-admin', plugin_dir_url( __FILE__ ) . 'css/hipsum-pixel-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -95,19 +100,20 @@ class Hipsum_Pixel_Admin {
 	 *
 	 *
 	 */
-	public function add_media_button(){
+	public function add_media_button() {
 		global $post;
 
 		?>
-			<a href="#TB_inline?width=782&inlineId=hipsum-pixel-modal" class="thickbox button" id="button-hipsum-pixel-modal" title="Hipsum Pixel HTML Builder"> <span class="hp-icon"></span> Hipsum Pixel</a>
-	<?php
+		<a href="#TB_inline?width=782&inlineId=hipsum-pixel-modal" class="thickbox button"
+		   id="button-hipsum-pixel-modal" title="Hipsum Pixel HTML Builder"> <span class="hp-icon"></span> Hipsum Pixel</a>
+		<?php
 
 	}
 
 	public function add_modal_template() {
 
 		$screen = get_current_screen();
-		if($screen->base != 'post') {
+		if ( $screen->base != 'post' ) {
 			return;
 		}
 
@@ -120,7 +126,7 @@ class Hipsum_Pixel_Admin {
 	 * Add options page
 	 */
 	public function add_settings_page() {
-		// This page will in admin mainn menu
+		// This page will be under Tools menu
 		add_submenu_page(
 			'tools.php',
 			__( 'Hipsum Pixel Options', 'hipsum-pixel' ),
@@ -140,17 +146,56 @@ class Hipsum_Pixel_Admin {
 		$this->options = get_option( 'hp_settings' );
 		?>
 		<div class="wrap">
-			<h1>Hipsum Pixel Settings</h1>
 			<form method="post" action="options.php">
 				<?php
 				// This prints out all hidden setting fields
-//				settings_fields( 'fgp_option_group' );
-//				do_settings_sections( $this->plugin_name );
-//				submit_button();
+				//				settings_fields( 'fgp_option_group' );
+				do_settings_sections( $this->plugin_name );
+				submit_button();
 				?>
 			</form>
 		</div>
 		<?php
+	}
+
+	/**
+	 * Register and add settings
+	 */
+	public function add_settings() {
+		register_setting(
+			'hp_option_group', // Option group
+			'hp_settings', // Option name
+			array( $this, 'sanitize' ) // Sanitize
+		);
+
+		add_settings_section(
+			$this->plugin_name . '_info', // ID
+			'', // Title
+			array( $this, 'print_section_info' ), // Callback
+			$this->plugin_name // Page
+		);
+
+		add_settings_section(
+			$this->plugin_name . '_fields', // ID
+			'Settings', // Title
+			array( $this, 'hp_fields_callback' ), // Callback
+			$this->plugin_name // Page
+		);
+	}
+
+	/**
+	 * Print the Fields section text
+	 */
+	public function hp_fields_callback() {
+		// Output for fields section - doing nothing!
+		// Callback function required by add_settings_section()
+	}
+
+	/**
+	 * Print the Section text
+	 */
+	public function print_section_info() {
+		include_once 'partials/hipsum-pixel-section-info.php';
 	}
 
 }
