@@ -60,14 +60,26 @@ Please post any question at WordPress plugin support page.
 
 ## Screenshots 
 
+1. Hipsum Pixel button on WordPress editor
+1. Hipsum Pixel UI in Lightbox showing render preview
+1. Hipsum Pixel UI in Lightbox showing HTML view
+1. Hipsum Pixel Setting page
+
+
+
 ### 1. Hipsum Pixel button on WordPress editor
 ![Hipsum Pixel button on WordPress editor](https://ps.w.org/hipsum-pixel/assets/screenshot-1.png)
 
-### 2. Hipsum Pixel UI in Lightbox showing HTML view
-![Hipsum Pixel UI in Lightbox showing HTML view](https://ps.w.org/hipsum-pixel/assets/screenshot-2.png)
-
 ### 3. Hipsum Pixel UI in Lightbox showing render preview
-![Hipsum Pixel UI in Lightbox showing render preview](https://ps.w.org/hipsum-pixel/assets/screenshot-3.png)
+![Hipsum Pixel UI in Lightbox showing render preview](https://ps.w.org/hipsum-pixel/assets/screenshot-2.png)
+
+### 3. Hipsum Pixel UI in Lightbox showing HTML view
+![Hipsum Pixel UI in Lightbox showing HTML view](https://ps.w.org/hipsum-pixel/assets/screenshot-3.png)
+
+### 4. Hipsum Pixel Setting page
+![Hipsum Pixel Setting page](https://ps.w.org/hipsum-pixel/assets/screenshot-4.png)
+
+
 
 ## Changelog 
 

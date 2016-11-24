@@ -55,8 +55,10 @@ None yet.  Please post your questions or problems in the support section.
 == Screenshots ==
 
 1. Hipsum Pixel button on WordPress editor
-1. Hipsum Pixel UI in Lightbox showing HTML view
 1. Hipsum Pixel UI in Lightbox showing render preview
+1. Hipsum Pixel UI in Lightbox showing HTML view
+1. Hipsum Pixel Setting page
+
 
 == Changelog ==
 
