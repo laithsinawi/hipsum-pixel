@@ -11,15 +11,16 @@ Creates a button on the WordPress editor toolbar to insert a configurable amount
 
 == Description ==
 
-Hipsum Pixel brings the power of two data services into a single WordPress plugin. "RandomText" grabs dummy text in either Lorem Ipsum or Gibberish format, and "LoremPixel" gets randoms images in multiple different categories.  Hipsum Pixel let's format the content using HTML tags (p, ol, ul, and h1-h4).  For images, you can set width and height and native WordPress classes for positioning (left, right, center).
+Hipsum Pixel brings the power of two data services into a single WordPress plugin. "RandomText" grabs dummy text in either Lorem Ipsum or Gibberish format, and your choice of either [LoremPixel](http://lorempixel.com) or [Placekitten](http://placekitten.com) gets randoms images.  LoremPixel also includes multiple image categories.  Hipsum Pixel let's you format the content using HTML tags (p, ol, ul, and h1-h4).  For images, you can set width and height and native WordPress classes for positioning (left, right, center).
 
 ### Plugin Features:
 
-*   Add button to editor, which opens a lightbox window with UI
+*   Add button to editor, which opens a lightbox window with UIa
 *   Generate Lorem Ipsum or Gibberish content in HTML tags (p, ol, ul, h1-h4)
-*   Generate random images in color or grayscale and from multiple different categories
+*   Generate random images in color or gray scale and from multiple different categories
 *   Configurable number of HTML elements and number of words per element
 *   Configurable image width and height and alignment using native WordPress classes (left, right, center)
+*   Configurable image source - either [LoremPixel](http://lorempixel.com) or [Placekitten](http://placekitten.com)
 *   Preview results before inserting into post
 
 ### Image Categories:
@@ -38,9 +39,6 @@ Hipsum Pixel brings the power of two data services into a single WordPress plugi
 *   Technics
 *   Transport
 
-### Limitations:
-
-*   Random images do not work over https due to data service LoremPixel limitation (only works over http).  This will be fixed in the next version.
 
 == Installation ==
 
@@ -61,7 +59,15 @@ None yet.  Please post your questions or problems in the support section.
 
 == Changelog ==
 
-= 1.0 =
+= Version 2.0 =
+* New feature - added image source options (LoremPixel or PlaceKitten)
+* Bug fix - scripts and styles load only on specific admin pages (post/page edit, and Tools -> Hipum Pixel Options) instead of all admin screens
+* Bug fix - ability to load images over https by setting image source option to PlaceKitten
+
+= Version 1.0 =
 * Initial commit
 
 == Upgrade Notice ==
+
+= 2.0 =
+Bug fixes and new features - see changelog

@@ -1,2 +1,4 @@
 <h1>Hipsum Pixel Settings</h1>
-<p>Lorem ipsum varius interdum nullam per vehicula laoreet vivamus tortor, orci nunc ad primis orci sit duis diam, praesent ut ligula amet ipsum mollis turpis lectus velit commodo nam tristique conubia arcu malesuada.</p>
+<p>On page and post editor toolbar, you'll find the LoremPixel button. The button open a complete UI where you generate your content, preview it, and then Inert into Post.</p>
+<img src="<?php echo plugin_dir_url(__DIR__) . 'img/screenshot-1.png';  ?>" alt="Hipsum Pixel button in editor window">
+<p>If you find this plugin useful, please <a href="https://wordpress.org/support/plugin/hipsum-pixel/reviews/">post a review</a>.  It can be only a few words if you want.  Thanks!</p>

@@ -115,9 +115,7 @@ class Hipsum_Pixel_Admin {
 	}
 
 	/**
-	 * Insert shortcode media button
-	 *
-	 *
+	 * Add button to editor toolbar
 	 */
 	public function add_media_button() {
 
@@ -133,6 +131,9 @@ class Hipsum_Pixel_Admin {
 
 	}
 
+	/**
+	 * Create UI in modal
+	 */
 	public function add_modal_template() {
 
 		$screen = get_current_screen();
@@ -169,10 +170,9 @@ class Hipsum_Pixel_Admin {
 		$this->options = get_option( 'hp_settings' );
 		?>
 		<div class="wrap hp-options">
-			<h1>Fancy Grid Portfolio</h1>
 			<form method="post" action="options.php">
 				<?php
-				// This prints out all hidden setting fields
+				// This prints out all setting fields
 				settings_fields( 'hp_options_group' );
 				do_settings_sections( $this->plugin_name );
 				submit_button();

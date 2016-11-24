@@ -61,7 +61,7 @@
 					<form class="form">
 
 						<div class="row"><!-- nested row -->
-							<?php if ( isset($this->options['image_source']) &&  $this->options['image_source'] == 'lorempixel' ) : ?>
+							<?php if ( isset( $this->options['image_source'] ) && $this->options['image_source'] == 'lorempixel' ) : ?>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<label for="image-category" class="control-label block">Category</label>
