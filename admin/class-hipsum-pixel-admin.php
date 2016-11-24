@@ -246,13 +246,15 @@ class Hipsum_Pixel_Admin {
 		<label for="hp_settings[image_source]" class="<?php echo $class; ?>">
 			<input type="radio" name="hp_settings[image_source]"
 			       value="lorempixel" <?php checked( 'lorempixel', $image_source, true ); ?>>LoremPixel
-			<span>(for random images with multiple categories in color or gray scale - <a
-					target="_blank" href="http://lorempixel.com/">LoremPixel</a> </span> <span class="important">DOES NOT LOAD IMAGES OVER HTTPS)</span>
+			<span>(for random images with multiple categories in color or grayscale
+				<p class="description"><a
+					target="_blank" href="http://lorempixel.com/">LoremPixel</a> </span>
+			<span class="important">DOES NOT load images HTTPS</span></p>
 		</label>
 		<label for="hp_settings[image_source]" class="<?php echo $class; ?>">
 			<input type="radio" name="hp_settings[image_source]"
 			       value="placekitten" <?php checked( 'placekitten', $image_source, true ); ?>>PlaceKitten
-			<span>(for random cute kitten images in color or gray scale <a target="_blank"
+			<span>(for random cute kitten images in color or grayscale <a target="_blank"
 			                                                               href="http://placekitten.com/">PlaceKitten</a>)</span>
 		</label>
 		<?php

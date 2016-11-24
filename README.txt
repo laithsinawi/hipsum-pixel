@@ -17,10 +17,10 @@ Hipsum Pixel brings the power of two data services into a single WordPress plugi
 
 *   Add button to editor, which opens a lightbox window with UIa
 *   Generate Lorem Ipsum or Gibberish content in HTML tags (p, ol, ul, h1-h4)
-*   Generate random images in color or gray scale and from multiple different categories
+*   Generate random images in color or grayscale and from multiple different categories
 *   Configurable number of HTML elements and number of words per element
 *   Configurable image width and height and alignment using native WordPress classes (left, right, center)
-*   Configurable image source - either [LoremPixel](http://lorempixel.com) or [Placekitten](http://placekitten.com)
+*   Configurable image source under Tools -> Options: either [LoremPixel](http://lorempixel.com) or [Placekitten](http://placekitten.com)
 *   Preview results before inserting into post
 
 ### Image Categories:
@@ -44,6 +44,7 @@ Hipsum Pixel brings the power of two data services into a single WordPress plugi
 
 1. Upload `hipsum-pixel.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Optionally change image source under Tools -> Hipsum Pixel Options
 1. Go to post or page, click on the "Hipsum Pixel" button
 1. Generate content and images, preview, and click "Insert into Post"
 
