@@ -181,7 +181,12 @@
 
     function sanatize_input(data) {
         // Filter out html tag not allowed
-        var regex = /<(?:p|h[1-4])>[\w\s\d,.]*<\/(?:p|h[1-4])>|(?:<ul>|<ol>)\s*((?:<li>)[\w\s\d,.]*<\/li>[\n\r\t\s]*)*<\/[o|u]l>|<img\s*(class=\"\w*\")\s*src=\"http:\/\/\w*.\w*\/(g\/)?\d*\/\d*\/\w*\"\s*\/?>/g;
+        // var regex = /<(?:p|h[1-4])>[\w\s\d,.]*<\/(?:p|h[1-4])>|(?:<ul>|<ol>)\s*((?:<li>)[\w\s\d,.]*<\/li>[\n\r\t\s]*)*<\/[o|u]l>|<img\s*(class=\"\w*\")\s*src=\"http:\/\/\w*.\w*\/(g\/)?\d*\/\d*\/\w*\"\s*\/?>/g;
+        var regex = /<(?:p|h[1-4])>[\w\s\d,.]*<\/(?:p|h[1-4])>|(?:<ul>|<ol>)\s*((?:<li>)[\w\s\d,.]*<\/li>[\n\r\t\s]*)*<\/[o|u]l>|<img\s*(class=\"\w*\")\s*src=\"https?:\/\/\w*.\w*\/(g\/)?\d*\/\d*\/?(\w*\"\s*)?\/?>/g;
+
+
+
+
         var result_arr = data.match(regex);
         var result_str = '';
         if ($.isArray(result_arr)) {
