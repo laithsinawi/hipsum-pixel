@@ -4,6 +4,7 @@
 }
 #TB_window, #TB_ajaxContent {
     width: 790px !important;
+    /*height: auto;*/
 }
 #results textarea {
     border: 0;

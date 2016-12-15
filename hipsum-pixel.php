@@ -16,7 +16,7 @@
  * Plugin Name:       Hipsum Pixel
  * Plugin URI:        http://www.sinawiwebdesign.com/wordpress-plugins/hipsum-pixel
  * Description:       Creates a button on the WordPress editor toolbar to insert a configurable amount of Lorem Ipsum or Gibberish placeholder text and random images using two data services to retrieve data (randomtext.me and lorempixel.com or placekitten.com)
- * Version:           2.0
+ * Version:           2.1
  * Author:            Laith Sinawi
  * Author URI:        http://www.sinawiwebdesign.com
  * License:           GPL-2.0+

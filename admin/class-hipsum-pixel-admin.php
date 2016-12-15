@@ -249,7 +249,7 @@ class Hipsum_Pixel_Admin {
 			<span>(for random images with multiple categories in color or grayscale
 				<p class="description"><a
 					target="_blank" href="http://lorempixel.com/">LoremPixel</a> </span>
-			<span class="important">DOES NOT load images HTTPS</span></p>
+			<span class="important">DOES NOT load images over HTTPS</span></p>
 		</label>
 		<label for="hp_settings[image_source]" class="<?php echo $class; ?>">
 			<input type="radio" name="hp_settings[image_source]"

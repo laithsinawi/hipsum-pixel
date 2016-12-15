@@ -2,7 +2,7 @@
 **Contributors:** laith3  
 **Tags:** lorem ipsum, lorem, ipsum, dummy text, content generator, hipsum, randomtext, lorempixel, lorem pixel, hipsum pixel  
 **Requires at least:** 4.1.1    
-**Tested up to:** 4.6.1  
+**Tested up to:** 4.7.1  
 **Stable tag:** trunk  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
@@ -83,6 +83,9 @@ Please post any question at WordPress plugin support page.
 
 ## Changelog 
 
+### Version 2.1
+* Bug fix - editor window scroll not showing on small displays
+
 ### Version 2.0
 * New feature - added image source options (LoremPixel or PlaceKitten)
 * Bug fix - scripts and styles load only on specific admin pages (post/page edit, and Tools -> Hipum Pixel Options) instead of all admin screens
@@ -92,6 +95,9 @@ Please post any question at WordPress plugin support page.
 * Initial release
 
 ## Upgrade Notice 
+
+### Version 2.1
+Bug fix - editor window scroll not showing on small displays
 
 ### Version 2.0
 * Bug fixes and new features - see changelog
